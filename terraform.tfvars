@@ -1,0 +1,10 @@
+region = "us-east-1"  # This region will be used throught scripts
+ecr_name = "noderepo"  # This will be used as repository name
+cluster_name = "node-cluster"
+container_cpu    = 256
+container_memory = 512
+container_name   = "nodeapp"
+container_port   = 3000
+host_port        = 3000
+service_name     = "nodeservice"
+subnets          = ["subnet-5fea5800", "subnet-cb4dfbad"] #copy vpc subnets which has public connectivity

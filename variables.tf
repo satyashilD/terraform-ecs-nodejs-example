@@ -1,0 +1,10 @@
+variable region {}
+variable ecr_name {}
+variable cluster_name {}
+variable container_cpu {}
+variable container_memory {}
+variable container_name {}
+variable container_port {}
+variable host_port {}
+variable subnets {}
+variable service_name {}
