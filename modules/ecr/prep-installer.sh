@@ -26,6 +26,9 @@ app.listen(port, () => console.log('Node app listening on port $port!'))
 EOF
 
 #node index.js
+# End of node app creation
+
+# Create Dockerfile and add node modules and supporting scripts created earlier
 
 cat <<EOF>> Dockerfile
 
@@ -51,7 +54,11 @@ EXPOSE 3000
 CMD ["node", "index.js"]
 EOF
 
+# End of Dockerfile
+
+# Build docker image and push it to ECR repository
 echo $ECR_URL
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $ECR_URL 
 docker build -t $ECR_URL:node_app .
 docker push $ECR_URL:node_app
+# End of docker build and push 
